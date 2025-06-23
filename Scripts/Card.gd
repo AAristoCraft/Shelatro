@@ -6,6 +6,7 @@ signal hovered_off
 
 
 var card_starting_position
+var card_id := ""
 
 func _ready() -> void:
 	get_parent().connect_card_signals(self)

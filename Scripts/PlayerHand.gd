@@ -34,8 +34,18 @@ func calculate_card_position(index):
 	
 	
 func animate_card_to_position(card, new_position):
-	var tween = get_tree().create_tween()
-	tween.tween_property(card, "position", new_position, 0.3)
+        var tween = get_tree().create_tween()
+        tween.tween_property(card, "position", new_position, 0.3)
+
+func get_card_ids() -> Array:
+        var ids := []
+        for card in player_hand:
+                ids.append(card.card_id)
+        return ids
+
+func calculate_score() -> int:
+        var ScoreManager = preload("res://Scripts/ScoreManager.gd")
+        return ScoreManager.calculate_score(get_card_ids())
 	
 	
 	

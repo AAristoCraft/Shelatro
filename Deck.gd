@@ -3,7 +3,7 @@ extends Node2D
 
 const CARD_SCENE_PATH = "res://Scenes/Card.tscn"
 
-var player_deck = ["Ag_42", "Ag_42", "Ag_42", "Ag_42", "Ag_42", "Ag_42"]
+var player_deck = ["42_years", "42_years", "Ushanka_hat", "42_years"]
 
 
 func _ready() -> void:
@@ -11,8 +11,8 @@ func _ready() -> void:
 
 
 func draw_card():
-	var drag_drawn = player_deck[0]
-	player_deck.erase(drag_drawn)
+        var drawn_id = player_deck[0]
+        player_deck.erase(drawn_id)
 	
 	if player_deck.size() == 0:
 		$Area2D/CollisionShape2D.disabled = true
@@ -21,7 +21,8 @@ func draw_card():
 	print("draw card")
 	var card_scene = preload(CARD_SCENE_PATH)
 
-	var new_card = card_scene.instantiate()
+        var new_card = card_scene.instantiate()
+        new_card.card_id = drawn_id
 	$"../CardManager".add_child(new_card)
 	new_card.name = "Card"
 	$"../PlayerHand".add_card_to_hand(new_card)
