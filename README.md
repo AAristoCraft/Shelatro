@@ -35,6 +35,15 @@ Cards may exist in several editions (standard, foil, polychrome, negative) which
 3. Score counting. Players with the lowest score are nominated for elimination, and the remaining players vote to remove one of them.
 4. If more than one player remains, return to the shop phase.
 
+## Shop
+Players begin with **10** currency. The shop displays a card for purchase and a
+slot for selling cards.
+* Prices are determined by card rarity.
+* Drag a card from your hand into the sell slot and press **Sell** to gain
+  currency equal to that card's price.
+* Select the card in the buy slot and press **Buy** to move it to your hand and
+  pay its price.
+
 ## Score Calculation
 `ScoreManager.gd` contains helper functions for computing a player's score based on card IDs. Each card in `CardsDataBase.gd` now includes a numeric value in its data array. `calculate_score(["42_years", "Ushanka_hat"])` for example returns `2`.
 

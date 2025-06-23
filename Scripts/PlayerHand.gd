@@ -16,8 +16,13 @@ func add_card_to_hand(card):
 	if card not in player_hand:
 		player_hand.insert(0, card)
 		update_hand_position()
-	else:
-		animate_card_to_position(card, card.card_starting_position)
+        else:
+                animate_card_to_position(card, card.card_starting_position)
+
+func remove_card_from_hand(card):
+        if card in player_hand:
+                player_hand.erase(card)
+                update_hand_position()
 
 func update_hand_position():
 	for i in range(player_hand.size()):
