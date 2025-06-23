@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bremm62kl84ha"]
+
+[ext_resource type="Texture2D" uid="uid://v670nl6pm6qe" path="res://Assets/Deck.png" id="1_nxs2u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h2yge"]
+size = Vector2(120, 168)
+
+[node name="Deck" type="Node2D"]
+z_index = -2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.661111, 0.633962)
+texture = ExtResource("1_nxs2u")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_h2yge")
