@@ -39,5 +39,7 @@ func reycast_at_cursor():
 			var card_found = result[0].collider.get_parent()
 			if card_found:
 				card_manager_reference.start_drag(card_found)
-		elif result_collision_mask == COLLISION_MASK_DECK:
-			deck_referance.draw_card()
+                elif result_collision_mask == COLLISION_MASK_DECK:
+                        # Draw a card from the deck. The returned card is handled
+                        # by the GameManager or PlayerHand automatically.
+                        deck_referance.draw_card()
