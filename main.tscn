@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://eh301eiqeuvg"]
+[gd_scene load_steps=10 format=3 uid="uid://eh301eiqeuvg"]
 
 [ext_resource type="Script" uid="uid://cfx0lddfonm8y" path="res://Scripts/CardManager.gd" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://bw00wjjnqy2uj" path="res://Scenes/CardSlot.tscn" id="2_h2yge"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://v670nl6pm6qe" path="res://Assets/Deck.png" id="4_1bvp3"]
 [ext_resource type="Script" uid="uid://dute557lihamt" path="res://Deck.gd" id="4_7mycd"]
 [ext_resource type="Script" uid="uid://cxunx746fxkvt" path="res://InputManager.gd" id="6_272bh"]
+[ext_resource type="Script" path="res://Scripts/GameManager.gd" id="7_gm"]
+[ext_resource type="Script" path="res://Scripts/Shop.gd" id="8_shop"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h2yge"]
 size = Vector2(118, 168)
@@ -42,3 +44,7 @@ shape = SubResource("RectangleShape2D_h2yge")
 
 [node name="InputManager" type="Node2D" parent="."]
 script = ExtResource("6_272bh")
+[node name="GameManager" type="Node2D" parent="."]
+script = ExtResource("7_gm")
+[node name="Shop" type="Node2D" parent="."]
+script = ExtResource("8_shop")
