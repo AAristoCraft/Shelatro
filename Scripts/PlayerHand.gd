@@ -16,8 +16,13 @@ func add_card_to_hand(card):
 	if card not in player_hand:
 		player_hand.insert(0, card)
 		update_hand_position()
-	else:
-		animate_card_to_position(card, card.card_starting_position)
+        else:
+                animate_card_to_position(card, card.card_starting_position)
+
+func remove_card_from_hand(card):
+        if card in player_hand:
+                player_hand.erase(card)
+                update_hand_position()
 
 func update_hand_position():
 	for i in range(player_hand.size()):
@@ -34,8 +39,18 @@ func calculate_card_position(index):
 	
 	
 func animate_card_to_position(card, new_position):
-	var tween = get_tree().create_tween()
-	tween.tween_property(card, "position", new_position, 0.3)
+        var tween = get_tree().create_tween()
+        tween.tween_property(card, "position", new_position, 0.3)
+
+func get_card_ids() -> Array:
+        var ids := []
+        for card in player_hand:
+                ids.append(card.card_id)
+        return ids
+
+func calculate_score() -> int:
+        var ScoreManager = preload("res://Scripts/ScoreManager.gd")
+        return ScoreManager.calculate_score(get_card_ids())
 	
 	
 	
